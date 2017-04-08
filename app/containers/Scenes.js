@@ -1,0 +1,36 @@
+import React, { Component } from 'react';
+import StartScene from './StartScene';
+import RoleSelectionScene from './RoleSelectionScene';
+import PackagesSelectionScene from './PackagesSelectionScene';
+import InstalationScene from './InstalationScene';
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { actions } from '../ducks/steps';
+
+class Scenes extends Component {
+  onNext = () => {
+    this.props.nextStep();
+  };
+
+  onBack = () => {
+    this.props.previousStep();
+  };
+
+  scenes = () => {
+    return [
+      <StartScene onNext={this.onNext} />,
+      <RoleSelectionScene onNext={this.onNext} onBack={this.onBack} />,
+      <PackagesSelectionScene onNext={this.onNext} onBack={this.onBack} />,
+      <InstalationScene onNext={this.onNext} onBack={this.onBack} />
+    ];
+  };
+  render() {
+    return this.scenes()[this.props.steps.step];
+  }
+}
+
+const mapActions = dispatch => bindActionCreators(actions, dispatch);
+const mapState = store => ({ steps: store.steps });
+
+export default connect(mapState, mapActions)(Scenes);

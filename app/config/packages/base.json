@@ -1,0 +1,19 @@
+{
+  "system": [
+    "bash-completion",
+    "git"
+  ],
+  "cask": [
+    "alfred",
+    "appcleaner",
+    "firefox",
+    "github-desktop",
+    "google-chrome",
+    "iterm2",
+    "hyper",
+    "skype",
+    "spotify",
+    "the-unarchiver",
+    "vlc"
+  ]
+}
