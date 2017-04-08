@@ -31,15 +31,23 @@ const styles = {
 };
 
 class Header extends PureComponent {
+  renderBack = () => {
+    const { classes, onBack } = this.props;
+    if (onBack) {
+      return (
+        <button className={classes.button} onClick={onBack}>
+          <span className={classes.icon} />
+        </button>
+      );
+    }
+  };
   render() {
-    const { classes, text, onBack, rightButton } = this.props;
+    const { classes, text, rightButton } = this.props;
 
     return (
       <div className={classes.header}>
         <div className="col-xs-2">
-          <button className={classes.button} onClick={onBack}>
-            <span className={classes.icon} />
-          </button>
+          {this.renderBack()}
         </div>
         <div className="col-xs-8">
           <p>{text}</p>

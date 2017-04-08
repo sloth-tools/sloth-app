@@ -32,6 +32,13 @@ class InstalationScene extends Component {
     ipcRenderer.send('install', JSON.stringify(data));
   };
 
+  componentDidMount() {
+    ipcRenderer.on('running', () => {
+      console.log('moving to next');
+      this.props.onNext();
+    });
+  }
+
   render() {
     const { classes, onBack } = this.props;
 
