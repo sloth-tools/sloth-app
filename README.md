@@ -5,12 +5,20 @@
 
 **sloth-app** is an app to install everything you need in your new mac, with no effort =)
 
-- [Running Locally](#runninglocally)
+- [Download && install](#download--install)
+- [Running Locally](#running-locally)
 - [DevTools](#devtools)
 - [Packaging](#packaging)
 - [Contributing](#contributing)
 - [Helpers/Tools](#helperstools)
-- [Maintainers](#mantainers)
+- [Maintainers](#maintainers)
+
+## Download && install
+1. Go to the [releases page](https://github.com/uesteibar/sloth-app/releases).
+2. Select the latest version.
+3. Download the `.dmg` file.
+4. Install it in your mac.
+5. Run Sloth and enjoy :smiley_cat:
 
 ## Running locally
 
@@ -53,9 +61,9 @@ The project uses [`standard-version`][standard-version] to update the [CHANGELOG
 
 So this is a step by step guide to contributing to the project (mostly extracted from the [`standard-version`][standard-version] docs):
 
-1. when you land commits on your `master` branch, select the _Squash and Merge_ option.
+1. when you land commits on your `master` branch, select the _Rebase and Merge_ option.
 2. add a title and body that follows the [conventional-changelog-standard conventions][conventional-changelog-standard].
-3. when you're ready to release to npm:
+3. when you're ready to release a new version:
   1. `git checkout master; git pull origin master`
   2. run `npm run bump`
   2. run `npm run pack`
@@ -64,7 +72,7 @@ So this is a step by step guide to contributing to the project (mostly extracted
 
 - [commitzen][]: A cli that will prompt the author to fill out any required commit fields at commit time. For this project we would use the [cz-conventional-changelog][] adapter.
 
-[CHANGELOG]: https://source.xing.com/360/360-sidebar/blob/master/CHANGELOG.md
+[CHANGELOG]: https://github.com/uesteibar/sloth-app/blob/master/CHANGELOG.md
 [code style]: https://npm.im/prettier
 [commitzen]: https://github.com/commitizen/cz-cli
 [conventional-changelog]: https://github.com/conventional-changelog/conventional-changelog
@@ -75,5 +83,3 @@ So this is a step by step guide to contributing to the project (mostly extracted
 ## Maintainers
 
 - [@uesteibar](https://github.com/uesteibar)
-- [@marciobarrios](https://github.com/marciobarrios)
-- [@ainformatico](https://github.com/ainformatico)
