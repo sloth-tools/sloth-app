@@ -33,7 +33,7 @@ const styles = {
 
 class Button extends Component {
   render() {
-    const { className, classes, dataKey, primary } = this.props;
+    const { className, classes, dataKey, primary, disabled } = this.props;
 
     return (
       <BsButton
@@ -42,6 +42,7 @@ class Button extends Component {
         })}
         onClick={this.props.onClick}
         data-key={dataKey}
+        disabled={disabled}
       >
         {this.props.label}
       </BsButton>

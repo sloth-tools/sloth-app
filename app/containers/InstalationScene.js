@@ -24,11 +24,17 @@ const styles = {
 };
 
 class InstalationScene extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { loading: false };
+  }
+
   onClick = () => {
     const data = {
       packages: this.props.packages,
       common: this.props.common
     };
+    this.setState({ loading: true });
     ipcRenderer.send('install', JSON.stringify(data));
   };
 
@@ -40,6 +46,7 @@ class InstalationScene extends Component {
         <Header text="Ready to go?" onBack={onBack} />
         <div className={classes.options_container}>
           <Button
+            disabled={this.state.loading}
             label="Install!"
             className={classes.option}
             onClick={this.onClick}
