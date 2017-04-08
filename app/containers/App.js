@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import StartScene from './StartScene'
+import { Provider } from 'react-redux';
+import store from '../ducks';
+import Scenes from './Scenes';
 
 class App extends Component {
   render() {
     return (
-      <StartScene />
-    )
+      <Provider store={store}>
+        <Scenes />
+      </Provider>
+    );
   }
 }
 
-export default App
+export default App;

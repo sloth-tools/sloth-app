@@ -1,0 +1,35 @@
+[
+  {
+    "hosts": "all",
+    "connection": "local",
+    "tasks": [{
+      "name": "Install homebrew packages",
+      "homebrew": {
+        "update_homebrew": "yes",
+        "state": "latest",
+        "name": []
+      }
+    },
+    {
+      "name": "Brew cleanup",
+      "shell": "brew cleanup"
+    },
+    { "name": "Install casks",
+      "homebrew_cask": {
+        "update_homebrew": "yes",
+         "state": "present",
+         "install_options": "force",
+         "name": []
+       }
+    },
+    {
+      "name": "Cleanup Casks",
+      "shell": "brew cask cleanup"
+    },
+    {
+      "name": "include all custom files",
+      "include": "{{ item }}",
+      "with_fileglob": ["./user/*.yml"]
+    }]
+  }
+]
