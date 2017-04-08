@@ -99,7 +99,10 @@ app.on('ready', async () => {
         exec(
           `open -a Terminal ${slothPath}/sloth_scripts/sloth_install.sh`,
           function(err, stdout, stderr) {
-            console.log({ err, stdout, stderr });
+            event.sender.send(
+              'running',
+              JSON.stringify({ err, stdout, stderr })
+            );
           }
         );
       }
