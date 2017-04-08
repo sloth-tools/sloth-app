@@ -84,7 +84,12 @@ app.on('ready', async () => {
     const slothPath = `${userHome}/.sloth`;
     const inventoryPath = `${slothPath}/sloth_inventory`;
     const yamlPath = `${slothPath}/sloth_install.yml`;
-    fs.mkdirSync(slothPath);
+
+    try {
+      fs.mkdirSync(slothPath);
+    } catch (e) {
+      console.log({ e });
+    }
     fs.writeFileSync(inventoryPath, '[localhost]\n127.0.0.1');
     fs.writeFileSync(yamlPath, yaml.dump(common));
 
