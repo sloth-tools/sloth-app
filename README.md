@@ -3,6 +3,8 @@
 [![code style](https://img.shields.io/badge/code%20style-prettier-ff69b4.svg?style=flat-square)][code style]
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)][standard-version]
 
+Based on the original **sloth cli**, developed by [@ainformatico](https://github.com/ainformatico) and [@marciobarrios](https://github.com/marciobarrios).
+
 **sloth-app** is an app to install everything you need in your new mac, with no effort =)
 
 - [Download && install](#download--install)
