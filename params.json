@@ -1,0 +1,6 @@
+{
+  "name": "Sloth",
+  "tagline": "A command line tool to automate the process of installing packages and apps on your mac.",
+  "body": "![Sloth screenshot](https://source.xing.com/raw/marcio-barrios/sloth/master/screenshot.png)\r\n\r\n# How to use it?\r\nOpen **Terminal app** and just execute the following command:\r\n```shell\r\n# Use your LDAP credentials if needed\r\ngit clone https://source.xing.com/marcio-barrios/sloth.git && cd sloth && ./install.sh\r\n```\r\n\r\nIf you want to add more apps or adapt Sloth to your needs read more about it in the [repository page](https://source.xing.com/marcio-barrios/sloth).",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
