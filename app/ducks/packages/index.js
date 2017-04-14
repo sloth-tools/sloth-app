@@ -1,19 +1,16 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { remote } from 'electron';
 
-const appPath = remote.app.getAppPath();
+const readFileFor = key => {
+  return fs.readJsonSync(
+    path.join(__dirname, `../../config/packages/${key}.json`)
+  );
+};
 
 const loadPackages = () => {
-  const base = fs.readJsonSync(
-    path.resolve(appPath, './build/config/packages/base.json')
-  );
-  const developer = fs.readJsonSync(
-    path.resolve(appPath, './build/config/packages/developer.json')
-  );
-  const designer = fs.readJsonSync(
-    path.resolve(appPath, './build/config/packages/designer.json')
-  );
+  const base = readFileFor('base');
+  const developer = readFileFor('developer');
+  const designer = readFileFor('designer');
 
   let developerList = developer.system.concat(base.system);
   developerList = developerList.map(item => ({
@@ -52,9 +49,7 @@ const loadPackages = () => {
 const initialState = {
   packagesForRoles: loadPackages(),
   packages: [],
-  common: fs.readJsonSync(
-    path.resolve(appPath, './build/config/packages/common.json')
-  )
+  common: readFileFor('common')
 };
 
 const types = {
