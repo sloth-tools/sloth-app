@@ -16,7 +16,7 @@ Based on the original **sloth cli**, developed by [@ainformatico](https://github
 - [Maintainers](#maintainers)
 
 ## Download && install
-1. Go to the [releases page](https://github.com/uesteibar/sloth-app/releases).
+1. Go to the [releases page](https://github.com/sloth-tools/sloth-app/releases).
 2. Select the latest version.
 3. Download the `.dmg` file.
 4. Install it in your mac.
@@ -26,7 +26,7 @@ Based on the original **sloth cli**, developed by [@ainformatico](https://github
 
 Clone the repository
 ```bash
-git clone --depth=1 git@github.com:uesteibar/sloth-app.git
+git clone --depth=1 git@github.com:sloth-tools/sloth-app.git
 ```
 
 Install dependencies
@@ -72,15 +72,13 @@ So this is a step by step guide to contributing to the project (mostly extracted
 
 ## Helpers/Tools
 
-- [commitzen][]: A cli that will prompt the author to fill out any required commit fields at commit time. For this project we would use the [cz-conventional-changelog][] adapter.
-
-[CHANGELOG]: https://github.com/uesteibar/sloth-app/blob/master/CHANGELOG.md
-[code style]: https://npm.im/prettier
-[commitzen]: https://github.com/commitizen/cz-cli
-[conventional-changelog]: https://github.com/conventional-changelog/conventional-changelog
-[conventional-changelog-standard]: https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md
-[cz-conventional-changelog]: https://github.com/commitizen/cz-conventional-changelog
-[standard-version]: https://github.com/conventional-changelog/standard-version
+- [Changelog](https://github.com/sloth-tools/sloth-app/blob/master/CHANGELOG.md)
+- [Code of conduct](https://github.com/sloth-tools/sloth-app/blob/master/CHANGELOG.md)
+- [Code style](https://npm.im/prettier)
+- [commitizen](https://github.com/commitizen/cz-cli): A cli that will prompt the author to fill out any required commit fields at commit time. For this project we would use the [cz-conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) adapter.
+- [conventional-changelog-standard](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md)
+- [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
+- [standard-version](https://github.com/conventional-changelog/standard-version)
 
 ## Maintainers
 
