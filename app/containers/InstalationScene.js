@@ -30,12 +30,12 @@ class InstalationScene extends Component {
   }
 
   onClick = () => {
-    const data = {
-      packages: this.props.packages,
-      common: this.props.common
-    };
+    const { packages, common, playbooks } = this.props;
     this.setState({ loading: true });
-    ipcRenderer.send('install', JSON.stringify(data));
+    ipcRenderer.send(
+      'install',
+      JSON.stringify({ packages, common, playbooks })
+    );
   };
 
   componentDidMount() {
@@ -68,7 +68,8 @@ class InstalationScene extends Component {
 const mapActions = dispatch => bindActionCreators(actions, dispatch);
 const mapState = store => ({
   packages: store.packages.packages,
-  common: store.packages.common
+  common: store.packages.common,
+  playbooks: store.playbooks.playbooks
 });
 
 export default connect(mapState, mapActions)(
