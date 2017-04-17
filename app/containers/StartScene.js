@@ -8,12 +8,12 @@ const styles = {
   body: {
     fontSize: 15,
     lineHeight: 1.5,
-    'max-width': '60%',
+    maxWidth: '60%',
     margin: '0 auto',
-    'text-align': 'left'
+    textAlign: 'left'
   },
   p: {
-    'margin-top': 20
+    marginTop: 20
   },
   link: {
     color: 'currentcolor',
@@ -29,7 +29,7 @@ const styles = {
     marginTop: 30
   },
   center: {
-    'text-align': 'center'
+    textAlign: 'center'
   }
 };
 

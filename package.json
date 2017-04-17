@@ -11,7 +11,7 @@
   "contributors": [
     "Marcio Barrios <marciobarrios@gmail.com>"
   ],
-  "repository": "https://github.com/uesteibar/sloth-app",
+  "repository": "https://github.com/sloth-tools/sloth-app",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.22.0",
