@@ -83,3 +83,4 @@ So this is a step by step guide to contributing to the project (mostly extracted
 ## Maintainers
 
 - [@uesteibar](https://github.com/uesteibar)
+- [@marciobarrios](https://github.com/marciobarrios)
