@@ -3,9 +3,11 @@
 [![code style](https://img.shields.io/badge/code%20style-prettier-ff69b4.svg?style=flat-square)]()
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)]()
 
-Based on the original **sloth cli**, developed by [@ainformatico](https://github.com/ainformatico) and [@marciobarrios](https://github.com/marciobarrios).
+Based on the original [**sloth cli**](https://github.com/sloth-tools/sloth-cli).
 
 **sloth-app** is an app to install everything you need in your new mac, with no effort =)
+
+![](https://github.com/sloth-tools/sloth-app/blob/master/sloth_demo.gif)
 
 - [Download && install](#download--install)
 - [Running Locally](#running-locally)
@@ -59,12 +61,12 @@ npm run pack
 
 ## Contributing
 
-The project uses [`standard-version`][standard-version] to update the [CHANGELOG][] with each commit message and upgrade the package version. For that reason every contribution should have a title and body that follows the [conventional-changelog-standard][] conventions.
+The project uses `standard-version` to update the `CHANGELOG` with each commit message and upgrade the package version. For that reason every contribution should have a title and body that follows the `conventional-changelog-standard` conventions.
 
-So this is a step by step guide to contributing to the project (mostly extracted from the [`standard-version`][standard-version] docs):
+So this is a step by step guide to contributing to the project (mostly extracted from the `standard-version` docs):
 
 1. when you land commits on your `master` branch, select the _Rebase and Merge_ option.
-2. add a title and body that follows the [conventional-changelog-standard conventions][conventional-changelog-standard].
+2. add a title and body that follows the `conventional-changelog-standard conventions`.
 3. when you're ready to release a new version:
   1. `git checkout master; git pull origin master`
   2. run `npm run bump`
