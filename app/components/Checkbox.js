@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
 import injectSheet from 'react-jss';
+import { colors } from '../helpers';
 
 const styles = {
   checkbox: {
@@ -11,10 +12,10 @@ const styles = {
   },
   checkboxStatus: {
     composes: 'glyphicon',
-    color: '#155799',
+    color: colors.blue,
     '&:before': {
-      'margin-right': 6,
-      'vertical-align': 'middle'
+      marginRight: 6,
+      verticalAlign: 'middle'
     }
   },
   selected: {

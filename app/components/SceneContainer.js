@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import { colors } from '../helpers';
 
 const styles = {
   container: {
     composes: 'container row',
     height: '100%',
-    backgroundColor: '#f6f6f6',
+    backgroundColor: colors.grayBackground,
     margin: 0,
-    color: '#333'
+    color: colors.grayText
   },
   content: {
     marginTop: 60
@@ -20,7 +21,7 @@ const styles = {
     fontSize: 11,
     color: '#999',
     textAlign: 'center',
-    borderTop: '1px solid #eaecef',
+    borderTop: `1px solid ${colors.grayBorder}`,
     padding: 20
   }
 };

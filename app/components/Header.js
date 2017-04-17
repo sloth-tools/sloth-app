@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
 import injectSheet from 'react-jss';
+import { colors } from '../helpers';
 
 const styles = {
   header: {
@@ -10,18 +11,15 @@ const styles = {
     left: 0,
     fontSize: 16,
     textAlign: 'center',
-    borderBottom: '2px solid #f2f2f2',
+    borderBottom: `1px solid ${colors.grayBorder}`,
     marginTop: 20,
     paddingBottom: 10
   },
   button: {
+    float: 'left',
     backgroundColor: 'transparent',
     border: 'none',
-    cursor: 'pointer',
-    float: 'left',
-    '&:focus': {
-      outline: 0
-    }
+    cursor: 'pointer'
   },
   rightButton: {
     marginLeft: 0
@@ -30,7 +28,7 @@ const styles = {
     composes: ['glyphicon', 'glyphicon-menu-left'],
     fontSize: 32
   },
-  headerTitle: {
+  title: {
     composes: 'col-xs-8',
     lineHeight: '35px'
   }
@@ -55,7 +53,7 @@ class Header extends PureComponent {
         <div className="col-xs-2">
           {this.renderBack()}
         </div>
-        <div className={classes.headerTitle}>
+        <div className={classes.title}>
           {text}
         </div>
         <div className={cn(['col-xs-2', classes.rightButton])}>
