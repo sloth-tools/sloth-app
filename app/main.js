@@ -5,6 +5,7 @@ import path from 'path';
 import url from 'url';
 import { app, crashReporter, BrowserWindow, Menu, ipcMain } from 'electron';
 import { exec } from 'child_process';
+import open from 'open';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -45,8 +46,8 @@ app.on('ready', async () => {
   }
 
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 500,
+    width: 700,
+    height: 600,
     show: false,
     resizable: false,
     fullscreen: false,
@@ -65,6 +66,12 @@ app.on('ready', async () => {
   // show window once on first load
   mainWindow.webContents.once('did-finish-load', () => {
     mainWindow.show();
+  });
+
+  // open links in the browser using 'open' npm package
+  mainWindow.webContents.on('new-window', function(event, url) {
+    event.preventDefault();
+    open(url);
   });
 
   ipcMain.on('install', (event, arg) => {

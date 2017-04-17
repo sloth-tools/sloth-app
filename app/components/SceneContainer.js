@@ -4,24 +4,24 @@ import injectSheet from 'react-jss';
 const styles = {
   container: {
     composes: 'container row',
-    height: 500,
-    width: 800,
-    backgroundColor: '#2c3e50',
+    height: '100%',
+    backgroundColor: '#f6f6f6',
     margin: 0,
-    color: 'white'
+    color: '#333'
   },
   content: {
-    marginTop: 80
+    marginTop: 60
   },
   footer: {
     position: 'absolute',
-    width: 600,
-    bottom: 10,
-    right: 100,
-    fontSize: 12,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    fontSize: 11,
+    color: '#999',
     textAlign: 'center',
-    borderTop: '2px solid #f2f2f2',
-    paddingTop: 15
+    borderTop: '1px solid #eaecef',
+    padding: 20
   }
 };
 
@@ -34,14 +34,13 @@ class SceneContainer extends Component {
         <div className={classes.content}>
           {this.props.children}
         </div>
-        <div className={classes.footer}>
-          <p>
-            This is an open source project created by Unai Esteibar on top of Sloth™.
-          </p>
-          <p>
-            Sloth™ is an open source project created by Alejandro Espinoza and Marcio Barrios.
-          </p>
-        </div>
+        <footer className={classes.footer}>
+          Sloth is an open source project part of the Sloth tools family:
+          {' '}
+          <a href="https://github.com/sloth-tools/" target="_blank">
+            {' '}https://github.com/sloth-tools
+          </a>
+        </footer>
       </div>
     );
   }

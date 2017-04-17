@@ -8,25 +8,27 @@ const styles = {
   button: {
     width: 140,
     fontSize: 20,
-    backgroundColor: '#2c3e50',
-    border: 'none',
-    borderRadius: 0,
-    color: 'white',
+    backgroundColor: '#f6f6f6',
+    border: '1px solid #155799',
+    'border-radius': 5,
+    color: '#155799',
     cursor: 'pointer',
     transition: 'background-color .2s ease-in-out',
-    '&:focus': {
-      outline: 0
-    },
     '&:hover, &:focus': {
-      backgroundColor: '#18bc9c',
+      'background-color': '#155799',
+      'border-color': '#155799',
       color: 'white'
     }
   },
   primary: {
-    backgroundColor: '#159e82',
-    color: 'white',
+    backgroundColor: '#f6f6f6',
+    border: '1px solid #155799',
+    'border-radius': 5,
+    color: '#155799',
     '&:hover, &:focus': {
-      backgroundColor: '#18bc9c'
+      'background-color': '#155799',
+      'border-color': '#155799',
+      color: 'white'
     }
   }
 };
