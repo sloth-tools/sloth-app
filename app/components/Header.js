@@ -5,18 +5,20 @@ import injectSheet from 'react-jss';
 const styles = {
   header: {
     position: 'absolute',
-    width: 600,
-    top: 10,
-    right: 100,
+    top: 15,
+    right: 0,
+    left: 0,
     fontSize: 16,
     textAlign: 'center',
     borderBottom: '2px solid #f2f2f2',
-    marginTop: 20
+    marginTop: 20,
+    paddingBottom: 10
   },
   button: {
     backgroundColor: 'transparent',
     border: 'none',
     cursor: 'pointer',
+    float: 'left',
     '&:focus': {
       outline: 0
     }
@@ -27,6 +29,10 @@ const styles = {
   icon: {
     composes: ['glyphicon', 'glyphicon-menu-left'],
     fontSize: 32
+  },
+  headerTitle: {
+    composes: 'col-xs-8',
+    lineHeight: '35px'
   }
 };
 
@@ -49,8 +55,8 @@ class Header extends PureComponent {
         <div className="col-xs-2">
           {this.renderBack()}
         </div>
-        <div className="col-xs-8">
-          <p>{text}</p>
+        <div className={classes.headerTitle}>
+          {text}
         </div>
         <div className={cn(['col-xs-2', classes.rightButton])}>
           {rightButton}

@@ -6,8 +6,14 @@ import SceneContainer from '../components/SceneContainer';
 
 const styles = {
   body: {
-    fontSize: 13,
-    lineHeight: 1.5
+    fontSize: 15,
+    lineHeight: 1.5,
+    'max-width': '60%',
+    margin: '0 auto',
+    'text-align': 'left'
+  },
+  p: {
+    'margin-top': 20
   },
   link: {
     color: 'currentcolor',
@@ -16,15 +22,14 @@ const styles = {
   },
   title: {
     fontSize: 64,
-    fontWeight: 400
+    fontWeight: 400,
+    margin: '20px 0 30px'
   },
   button: {
-    composes: 'col-xs-8 col-xs-offset-3',
-    marginTop: 50
+    marginTop: 30
   },
-  logo: {
-    composes: 'col-xs-8 col-xs-offset-2',
-    marginTop: 20
+  center: {
+    'text-align': 'center'
   }
 };
 
@@ -34,21 +39,16 @@ class StartScene extends Component {
 
     return (
       <SceneContainer>
-        <div className="col-xs-6 col-xs-offset-1">
-          <h3 className={classes.title}>Sloth™</h3>
+        <div className={classes.center}>
+          <img width="140" src="./img/sloth.png" />
+          <h3 className={classes.title}>Sloth</h3>
           <div className={classes.body}>
-            <p>Let's get your shiny new mac ready!</p>
-            <p>
+            <p className={classes.p}>Let's get your shiny new mac ready!</p>
+            <p className={classes.p}>
               Under the hood, Sloth will generate a configuration file with all the packages and apps to install.
               Then it will use Ansible Playbooks, Homebrew and Homebrew Cask to automate the process of installation.
             </p>
-            <p>
-              Just use your arrow keys and the enter button to navigate through the menu.
-            </p>
           </div>
-        </div>
-        <div className="col-xs-5">
-          <img className={classes.logo} width="140" src="./img/sloth.png" />
           <Button
             label="Start"
             className={classes.button}

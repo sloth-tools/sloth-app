@@ -8,8 +8,7 @@ const styles = {
   body_container: {
     composes: 'col-xs-6 col-xs-offset-3',
     listStyle: 'none',
-    marginTop: 20,
-    textAlign: 'center'
+    marginTop: 20
   },
   title: {
     marginBottom: 40

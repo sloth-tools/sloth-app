@@ -11,12 +11,15 @@ import Button from '../components/Button';
 import SceneContainer from '../components/SceneContainer';
 
 const styles = {
-  options_container: {
-    composes: 'col-xs-4 col-xs-offset-4',
+  list: {
     listStyle: 'none',
-    marginTop: 20,
-    height: 290,
+    margin: '100px 0 0',
+    height: 430,
     overflow: 'scroll'
+  },
+  listItem: {
+    float: 'left',
+    width: '33%'
   },
   nextButton: {
     width: 'auto'
@@ -29,6 +32,8 @@ class PackagesSelectionScene extends Component {
   };
 
   renderPackages = () => {
+    const { classes } = this.props;
+
     if (!this.props.role) {
       return [];
     }
@@ -36,12 +41,13 @@ class PackagesSelectionScene extends Component {
     const availablePackages = this.props.packages;
     return availablePackages.map(item => {
       return (
-        <Checkbox
-          key={item.name}
-          onClick={this.onClick}
-          label={item.name}
-          selected={item.checked}
-        />
+        <li className={classes.listItem} key={item.name}>
+          <Checkbox
+            onClick={this.onClick}
+            label={item.name}
+            selected={item.checked}
+          />
+        </li>
       );
     });
   };
@@ -56,7 +62,7 @@ class PackagesSelectionScene extends Component {
     return (
       <SceneContainer>
         <Header
-          text={'Tell us what you don\'t need.'}
+          text={'Everything is checked by default'}
           rightButton={
             <Button
               className={classes.nextButton}
@@ -66,7 +72,7 @@ class PackagesSelectionScene extends Component {
           }
           onBack={onBack}
         />
-        <ul className={classes.options_container}>
+        <ul className={classes.list}>
           {this.renderPackages()}
         </ul>
       </SceneContainer>
