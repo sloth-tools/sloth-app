@@ -1,11 +1,8 @@
-import fs from 'fs-extra';
-import yaml from 'js-yaml';
-import userHome from 'user-home';
-import path from 'path';
-import url from 'url';
 import { app, crashReporter, BrowserWindow, Menu, ipcMain } from 'electron';
-import { exec } from 'child_process';
 import open from 'open';
+import url from 'url';
+import path from 'path';
+import { run } from './processes';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -76,44 +73,9 @@ app.on('ready', async () => {
 
   ipcMain.on('install', (event, arg) => {
     const data = JSON.parse(arg);
-    const { packages, common } = data;
-    let userSystemList = packages.filter(
-      option => option.type == 'system' && option.checked
-    );
-    let userCaskList = packages.filter(
-      option => option.type == 'cask' && option.checked
-    );
-
-    let tasks = common[0].tasks;
-    tasks[0].homebrew.name = userSystemList.map(item => item.name);
-    tasks[2].homebrew_cask.name = userCaskList.map(item => item.name);
-
-    const slothPath = `${userHome}/.sloth`;
-    const inventoryPath = `${slothPath}/sloth_inventory`;
-    const yamlPath = `${slothPath}/sloth_install.yml`;
-
-    try {
-      fs.mkdirSync(slothPath);
-    } catch (e) {
-      console.log({ e });
-    }
-    fs.writeFileSync(inventoryPath, '[localhost]\n127.0.0.1');
-    fs.writeFileSync(yamlPath, yaml.dump(common));
-
-    exec(
-      `git clone https://gist.github.com/834f8eddb2ff978de4e5e69898301563.git ${slothPath}/sloth_scripts && chmod ugo+rwx ${slothPath}/sloth_scripts/sloth_install.sh`,
-      () => {
-        exec(
-          `open -a Terminal ${slothPath}/sloth_scripts/sloth_install.sh`,
-          function(err, stdout, stderr) {
-            event.sender.send(
-              'running',
-              JSON.stringify({ err, stdout, stderr })
-            );
-          }
-        );
-      }
-    );
+    run(data, (err, stdout, stderr) => {
+      event.sender.send('running', JSON.stringify({ err, stdout, stderr }));
+    });
   });
 
   mainWindow.webContents.on('did-finish-load', () => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StartScene from './StartScene';
 import RoleSelectionScene from './RoleSelectionScene';
 import PackagesSelectionScene from './PackagesSelectionScene';
+import PlaybooksScene from './PlaybooksScene';
 import InstalationScene from './InstalationScene';
 import FinalScene from './FinalScene';
 
@@ -23,6 +24,7 @@ class Scenes extends Component {
       <StartScene onNext={this.onNext} />,
       <RoleSelectionScene onNext={this.onNext} onBack={this.onBack} />,
       <PackagesSelectionScene onNext={this.onNext} onBack={this.onBack} />,
+      <PlaybooksScene onNext={this.onNext} onBack={this.onBack} />,
       <InstalationScene onNext={this.onNext} onBack={this.onBack} />,
       <FinalScene />
     ];

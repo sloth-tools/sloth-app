@@ -16,12 +16,18 @@ import {
   initialState as packagesInitialState
 } from './packages';
 
+import {
+  reducer as playbooksReducer,
+  initialState as playbooksInitialState
+} from './playbooks';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const combinedReducers = combineReducers({
   steps: stepsReducer,
   roles: rolesReducer,
-  packages: packagesReducer
+  packages: packagesReducer,
+  playbooks: playbooksReducer
 });
 
 const store = createStore(
@@ -29,7 +35,8 @@ const store = createStore(
   {
     steps: stepsInitialState,
     roles: rolesInitialState,
-    packages: packagesInitialState
+    packages: packagesInitialState,
+    playbooks: playbooksInitialState
   },
   composeEnhancers(applyMiddleware(thunk))
 );
