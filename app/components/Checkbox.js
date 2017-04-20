@@ -8,22 +8,22 @@ const styles = {
     padding: '2px 0',
     margin: '5px 0',
     fontSize: 20,
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   checkboxStatus: {
     composes: 'glyphicon',
     color: colors.blue,
     '&:before': {
       marginRight: 6,
-      verticalAlign: 'middle'
-    }
+      verticalAlign: 'middle',
+    },
   },
   selected: {
-    composes: 'glyphicon-check'
+    composes: 'glyphicon-check',
   },
   unselected: {
-    composes: 'glyphicon-unchecked'
-  }
+    composes: 'glyphicon-unchecked',
+  },
 };
 
 class Checkbox extends PureComponent {
@@ -39,8 +39,7 @@ class Checkbox extends PureComponent {
         className={cn([className, classes.checkbox])}
         onClick={this.onClick}
         key={label}
-        checked={selected}
-      >
+        checked={selected}>
         <span
           className={cn(classes.checkboxStatus, classes[setCheckboxStatus])}
         />

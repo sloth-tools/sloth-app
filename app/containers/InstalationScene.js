@@ -14,13 +14,13 @@ const styles = {
   options_container: {
     composes: 'col-xs-6 col-xs-offset-3',
     listStyle: 'none',
-    marginTop: 40
+    marginTop: 40,
   },
   option: {
     marginTop: 30,
     width: '100%',
-    height: 80
-  }
+    height: 80,
+  },
 };
 
 class InstalationScene extends Component {
@@ -34,7 +34,7 @@ class InstalationScene extends Component {
     this.setState({ loading: true });
     ipcRenderer.send(
       'install',
-      JSON.stringify({ packages, common, playbooks })
+      JSON.stringify({ packages, common, playbooks }),
     );
   };
 
@@ -69,9 +69,9 @@ const mapActions = dispatch => bindActionCreators(actions, dispatch);
 const mapState = store => ({
   packages: store.packages.packages,
   common: store.packages.common,
-  playbooks: store.playbooks.playbooks
+  playbooks: store.playbooks.playbooks,
 });
 
 export default connect(mapState, mapActions)(
-  injectSheet(styles)(InstalationScene)
+  injectSheet(styles)(InstalationScene),
 );

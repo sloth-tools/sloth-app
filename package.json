@@ -24,7 +24,7 @@
     "lint-staged": "^3.4.0",
     "open": "0.0.5",
     "pre-commit": "^1.2.2",
-    "prettier": "^0.22.0",
+    "prettier": "^1.2.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.8",
     "react-dom": "^15.4.2",
@@ -59,7 +59,7 @@
   },
   "scripts": {
     "bump": "standard-version",
-    "prettier": "prettier --single-quote --write --jsx-bracket-same-line app/index.js 'app/**/*.js'",
+    "prettier": "prettier --trailing-comma all --single-quote --write --jsx-bracket-same-line --bracket-spacing 'app/**/*.js'",
     "lint": "eslint --no-ignore scripts app test *.js",
     "lint:staged": "lint-staged",
     "postinstall": "install-app-deps",
@@ -73,7 +73,7 @@
   },
   "lint-staged": {
     "app/**/*.js": [
-      "prettier --single-quote --write",
+      "npm run prettier",
       "eslint --fix",
       "git add"
     ]

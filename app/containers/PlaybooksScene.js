@@ -16,10 +16,10 @@ const styles = {
     composes: 'col-xs-8 col-xs-offset-2',
     fontSize: 20,
     listStyle: 'none',
-    marginTop: 50
+    marginTop: 50,
   },
   nextButton: {
-    width: 'auto'
+    width: 'auto',
   },
   dropzone: {
     width: '100%',
@@ -28,29 +28,29 @@ const styles = {
     borderRadius: 10,
     paddingTop: 10,
     height: 350,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   dropzone_active: {
     borderColor: colors.blue,
-    color: colors.blue
+    color: colors.blue,
   },
   files: {
     listStyleType: 'none',
     textAlign: 'left',
     marginTop: 30,
-    padding: 0
+    padding: 0,
   },
   file: {
     padding: '4px 20px',
-    color: colors.blue
+    color: colors.blue,
   },
   icon: {
     composes: 'glyphicon glyphicon-file',
     '&:before': {
       marginRight: 6,
-      verticalAlign: 'middle'
-    }
-  }
+      verticalAlign: 'middle',
+    },
+  },
 };
 
 class PlaybooksScene extends Component {
@@ -93,8 +93,7 @@ class PlaybooksScene extends Component {
           <Dropzone
             onDrop={this.onDrop}
             className={classes.dropzone}
-            activeClassName={classes.dropzone_active}
-          >
+            activeClassName={classes.dropzone_active}>
             <p>Drop your ansible playbooks here</p>
             <p>Only .yml files will be accepted</p>
             <ul className={classes.files}>
@@ -111,5 +110,5 @@ const mapActions = dispatch => bindActionCreators(actions, dispatch);
 const mapState = store => ({ playbooks: store.playbooks });
 
 export default connect(mapState, mapActions)(
-  injectSheet(styles)(PlaybooksScene)
+  injectSheet(styles)(PlaybooksScene),
 );

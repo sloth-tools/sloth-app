@@ -1,13 +1,13 @@
 const initialState = {
   availableRoles: [
     { key: 'developer', label: 'Developer' },
-    { key: 'designer', label: 'Designer' }
+    { key: 'designer', label: 'Designer' },
   ],
-  selectedRole: null
+  selectedRole: null,
 };
 
 const types = {
-  ROLES_SELECT: 'ROLES/ROLES_SELECT'
+  ROLES_SELECT: 'ROLES/ROLES_SELECT',
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
 };
 
 const actions = {
-  selectRole: options => selectRole(options)
+  selectRole: options => selectRole(options),
 };
 
 const selectRole = roleKey => {

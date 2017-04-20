@@ -8,10 +8,10 @@ const styles = {
     height: '100%',
     backgroundColor: colors.grayBackground,
     margin: 0,
-    color: colors.grayText
+    color: colors.grayText,
   },
   content: {
-    marginTop: 60
+    marginTop: 60,
   },
   footer: {
     position: 'absolute',
@@ -22,8 +22,8 @@ const styles = {
     color: '#999',
     textAlign: 'center',
     borderTop: `1px solid ${colors.grayBorder}`,
-    padding: 20
-  }
+    padding: 20,
+  },
 };
 
 class SceneContainer extends Component {

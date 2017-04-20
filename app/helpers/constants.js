@@ -3,5 +3,5 @@ export const colors = {
   grayBorder: '#eaecef',
   grayText: '#333',
   grayDropzone: '#b3b3b3',
-  blue: '#155799'
+  blue: '#155799',
 };

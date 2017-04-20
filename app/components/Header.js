@@ -13,25 +13,25 @@ const styles = {
     textAlign: 'center',
     borderBottom: `1px solid ${colors.grayBorder}`,
     marginTop: 20,
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   button: {
     float: 'left',
     backgroundColor: 'transparent',
     border: 'none',
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   rightButton: {
-    marginLeft: 0
+    marginLeft: 0,
   },
   icon: {
     composes: ['glyphicon', 'glyphicon-menu-left'],
-    fontSize: 32
+    fontSize: 32,
   },
   title: {
     composes: 'col-xs-8',
-    lineHeight: '35px'
-  }
+    lineHeight: '35px',
+  },
 };
 
 class Header extends PureComponent {

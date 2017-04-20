@@ -8,14 +8,14 @@ const styles = {
   body_container: {
     composes: 'col-xs-6 col-xs-offset-3',
     listStyle: 'none',
-    marginTop: 20
+    marginTop: 20,
   },
   title: {
-    marginBottom: 40
+    marginBottom: 40,
   },
   thanks: {
-    marginTop: 40
-  }
+    marginTop: 40,
+  },
 };
 
 class FinalScene extends Component {
