@@ -42,6 +42,11 @@ Development
 npm start
 ```
 
+Run end2end tests
+```bash
+npm run test:features
+```
+
 ## DevTools
 
 Toggle DevTools:
