@@ -33,7 +33,6 @@
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "standard-version": "^4.0.0",
     "user-home": "^2.0.0"
   },
   "devDependencies": {
@@ -46,7 +45,8 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.1.18",
     "browser-sync": "^2.9.3",
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "electron": "^1.5.0",
     "electron-builder": "^13.8.2",
     "electron-devtools-installer": "^2.1.0",
@@ -55,12 +55,14 @@
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
     "npm-run-all": "^4.0.1",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "spectron": "^3.6.1",
+    "standard-version": "^4.0.0"
   },
   "scripts": {
     "bump": "standard-version",
-    "prettier": "prettier --trailing-comma all --single-quote --write --jsx-bracket-same-line --bracket-spacing 'app/**/*.js'",
-    "lint": "eslint --no-ignore scripts app test *.js",
+    "prettier": "prettier --trailing-comma all --single-quote --write --jsx-bracket-same-line --bracket-spacing 'app/**/*.js' 'spec/**/*.js'",
+    "lint": "eslint --no-ignore scripts app spec *.js",
     "lint:staged": "lint-staged",
     "postinstall": "install-app-deps",
     "start": "npm run private:compile -- --source-maps true && run-p -r private:watch private:serve",
@@ -69,11 +71,17 @@
     "private:watch": "npm run private:compile -- --source-maps true --watch --skip-initial-build",
     "private:serve": "babel-node scripts/serve.js",
     "private:compile": "babel app/ --copy-files --out-dir build",
-    "private:clean": "rimraf build"
+    "private:clean": "rimraf build",
+    "test:features": "mocha --compilers js:babel-core/register spec/features/**/*.js"
   },
   "lint-staged": {
     "app/**/*.js": [
       "npm run prettier",
+      "eslint --fix",
+      "git add"
+    ],
+    "spec/**/*.js": [
+      "prettier --single-quote --write",
       "eslint --fix",
       "git add"
     ]
