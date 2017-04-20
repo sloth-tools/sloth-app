@@ -17,9 +17,9 @@ const styles = {
     '&:hover, &:focus': {
       backgroundColor: colors.blue,
       borderColor: colors.blue,
-      color: 'white'
-    }
-  }
+      color: 'white',
+    },
+  },
 };
 
 class Button extends Component {
@@ -31,8 +31,7 @@ class Button extends Component {
         className={cn([className, classes.button])}
         onClick={this.props.onClick}
         data-key={dataKey}
-        disabled={disabled}
-      >
+        disabled={disabled}>
         {this.props.label}
       </BsButton>
     );

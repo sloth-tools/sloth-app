@@ -2,7 +2,7 @@ const initialState = { step: 0 };
 
 const types = {
   STEPS_NEXT: 'STEPS/STEPS_NEXT',
-  STEPS_BACK: 'STEPS/STEPS_BACK'
+  STEPS_BACK: 'STEPS/STEPS_BACK',
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
 
 const actions = {
   nextStep: () => nextStep(),
-  previousStep: () => previousStep()
+  previousStep: () => previousStep(),
 };
 
 const nextStep = () => {

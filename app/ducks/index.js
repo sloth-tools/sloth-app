@@ -3,22 +3,22 @@ import thunk from 'redux-thunk';
 
 import {
   reducer as stepsReducer,
-  initialState as stepsInitialState
+  initialState as stepsInitialState,
 } from './steps';
 
 import {
   reducer as rolesReducer,
-  initialState as rolesInitialState
+  initialState as rolesInitialState,
 } from './roles';
 
 import {
   reducer as packagesReducer,
-  initialState as packagesInitialState
+  initialState as packagesInitialState,
 } from './packages';
 
 import {
   reducer as playbooksReducer,
-  initialState as playbooksInitialState
+  initialState as playbooksInitialState,
 } from './playbooks';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -27,7 +27,7 @@ const combinedReducers = combineReducers({
   steps: stepsReducer,
   roles: rolesReducer,
   packages: packagesReducer,
-  playbooks: playbooksReducer
+  playbooks: playbooksReducer,
 });
 
 const store = createStore(
@@ -36,9 +36,9 @@ const store = createStore(
     steps: stepsInitialState,
     roles: rolesInitialState,
     packages: packagesInitialState,
-    playbooks: playbooksInitialState
+    playbooks: playbooksInitialState,
   },
-  composeEnhancers(applyMiddleware(thunk))
+  composeEnhancers(applyMiddleware(thunk)),
 );
 
 export default store;

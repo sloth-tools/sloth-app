@@ -26,7 +26,7 @@ class Scenes extends Component {
       <PackagesSelectionScene onNext={this.onNext} onBack={this.onBack} />,
       <PlaybooksScene onNext={this.onNext} onBack={this.onBack} />,
       <InstalationScene onNext={this.onNext} onBack={this.onBack} />,
-      <FinalScene />
+      <FinalScene />,
     ];
   };
   render() {

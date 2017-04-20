@@ -6,10 +6,10 @@ import { exec } from 'child_process';
 const run = (data, callback) => {
   const { packages, common, playbooks } = data;
   let userSystemList = packages.filter(
-    option => option.type == 'system' && option.checked
+    option => option.type == 'system' && option.checked,
   );
   let userCaskList = packages.filter(
-    option => option.type == 'cask' && option.checked
+    option => option.type == 'cask' && option.checked,
   );
 
   let tasks = common[0].tasks;
@@ -43,10 +43,10 @@ const run = (data, callback) => {
       exec(playbooksCopyCommand, () => {
         exec(
           `open -a Terminal ${slothPath}/sloth_scripts/sloth_install.sh`,
-          callback
+          callback,
         );
       });
-    }
+    },
   );
 };
 

@@ -13,13 +13,13 @@ const styles = {
   options_container: {
     composes: 'col-xs-6 col-xs-offset-3',
     listStyle: 'none',
-    marginTop: 40
+    marginTop: 40,
   },
   option: {
     marginTop: 30,
     width: '100%',
-    height: 80
-  }
+    height: 80,
+  },
 };
 
 class RoleSelectionScene extends Component {
@@ -64,5 +64,5 @@ const mapActions = dispatch => bindActionCreators(actions, dispatch);
 const mapState = store => ({ roles: store.roles });
 
 export default connect(mapState, mapActions)(
-  injectSheet(styles)(RoleSelectionScene)
+  injectSheet(styles)(RoleSelectionScene),
 );

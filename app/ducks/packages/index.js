@@ -3,7 +3,7 @@ import path from 'path';
 
 const readFileFor = key => {
   return fs.readJsonSync(
-    path.join(__dirname, `../../config/packages/${key}.json`)
+    path.join(__dirname, `../../config/packages/${key}.json`),
   );
 };
 
@@ -16,13 +16,13 @@ const loadPackages = () => {
   developerList = developerList.map(item => ({
     checked: true,
     name: item,
-    type: 'system'
+    type: 'system',
   }));
   let developerCaskList = developer.cask.concat(base.cask);
   developerCaskList = developerCaskList.map(item => ({
     checked: true,
     name: item,
-    type: 'cask'
+    type: 'cask',
   }));
   developerList = developerList.concat(developerCaskList);
 
@@ -30,30 +30,30 @@ const loadPackages = () => {
   designerList = designerList.map(item => ({
     checked: true,
     name: item,
-    type: 'system'
+    type: 'system',
   }));
   let designerCaskList = designer.cask.concat(base.cask);
   designerCaskList = designerCaskList.map(item => ({
     checked: true,
     name: item,
-    type: 'cask'
+    type: 'cask',
   }));
   designerList = designerList.concat(designerCaskList);
 
   return {
     developer: developerList,
-    designer: designerList
+    designer: designerList,
   };
 };
 
 const initialState = {
   packagesForRoles: loadPackages(),
   packages: [],
-  common: readFileFor('common')
+  common: readFileFor('common'),
 };
 
 const types = {
-  PACKAGES_SELECT: 'PACKAGES/PACKAGES_SELECT'
+  PACKAGES_SELECT: 'PACKAGES/PACKAGES_SELECT',
 };
 
 const reducer = (state = initialState, action) => {
@@ -67,7 +67,7 @@ const reducer = (state = initialState, action) => {
 
 const actions = {
   togglePackage: options => togglePackage(options),
-  setPackagesForRole: role => setPackagesForRole(role)
+  setPackagesForRole: role => setPackagesForRole(role),
 };
 
 const togglePackage = name => {

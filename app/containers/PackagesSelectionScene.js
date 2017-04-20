@@ -15,15 +15,15 @@ const styles = {
     listStyle: 'none',
     margin: '100px 0 0',
     height: 430,
-    overflow: 'scroll'
+    overflow: 'scroll',
   },
   listItem: {
     float: 'left',
-    width: '33%'
+    width: '33%',
   },
   nextButton: {
-    width: 'auto'
-  }
+    width: 'auto',
+  },
 };
 
 class PackagesSelectionScene extends Component {
@@ -83,9 +83,9 @@ class PackagesSelectionScene extends Component {
 const mapActions = dispatch => bindActionCreators(actions, dispatch);
 const mapState = store => ({
   role: store.roles.selectedRole,
-  packages: store.packages.packages
+  packages: store.packages.packages,
 });
 
 export default connect(mapState, mapActions)(
-  injectSheet(styles)(PackagesSelectionScene)
+  injectSheet(styles)(PackagesSelectionScene),
 );

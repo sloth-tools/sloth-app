@@ -1,9 +1,9 @@
 const initialState = {
-  playbooks: []
+  playbooks: [],
 };
 
 const types = {
-  PLAYBOOKS_ADD: 'PLAYBOOKS/PLAYBOOKS_ADD'
+  PLAYBOOKS_ADD: 'PLAYBOOKS/PLAYBOOKS_ADD',
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
 };
 
 const actions = {
-  addPlaybooks: newPlaybooks => addPlaybooks(newPlaybooks)
+  addPlaybooks: newPlaybooks => addPlaybooks(newPlaybooks),
 };
 
 const addPlaybooks = newPlaybooks => {
@@ -25,8 +25,9 @@ const addPlaybooks = newPlaybooks => {
     newPlaybooks.forEach(playbook =>
       playbooks.push({
         path: playbook.path,
-        name: playbook.name
-      }));
+        name: playbook.name,
+      }),
+    );
     return dispatch({ type: types.PLAYBOOKS_ADD, payload: { playbooks } });
   };
 };

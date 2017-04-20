@@ -10,27 +10,27 @@ const styles = {
     lineHeight: 1.5,
     maxWidth: '60%',
     margin: '0 auto',
-    textAlign: 'left'
+    textAlign: 'left',
   },
   p: {
-    marginTop: 20
+    marginTop: 20,
   },
   link: {
     color: 'currentcolor',
     textDecoration: 'none',
-    fontWeight: 700
+    fontWeight: 700,
   },
   title: {
     fontSize: 64,
     fontWeight: 400,
-    margin: '20px 0 30px'
+    margin: '20px 0 30px',
   },
   button: {
-    marginTop: 30
+    marginTop: 30,
   },
   center: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 };
 
 class StartScene extends Component {

@@ -26,7 +26,7 @@ crashReporter.start({
   productName: 'YourName',
   companyName: 'YourCompany',
   submitURL: 'https://your-domain.com/url-to-submit',
-  uploadToServer: false
+  uploadToServer: false,
 });
 
 app.on('window-all-closed', () => {
@@ -49,15 +49,15 @@ app.on('ready', async () => {
     resizable: false,
     fullscreen: false,
     useContentSize: true,
-    titleBarStyle: 'hidden-inset'
+    titleBarStyle: 'hidden-inset',
   });
 
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, 'index.html'),
       protocol: 'file:',
-      slashes: true
-    })
+      slashes: true,
+    }),
   );
 
   // show window once on first load
@@ -116,8 +116,8 @@ app.on('ready', async () => {
           label: 'Inspect element',
           click() {
             mainWindow.inspectElement(props.x, props.y);
-          }
-        }
+          },
+        },
       ]).popup(mainWindow);
     });
   }
