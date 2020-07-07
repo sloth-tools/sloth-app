@@ -48,7 +48,7 @@
     "browser-sync": "^2.9.3",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "electron": "^1.5.0",
+    "electron": "^9.1.0",
     "electron-builder": "^13.8.2",
     "electron-devtools-installer": "^2.1.0",
     "electron-packager": "^8.6.0",
