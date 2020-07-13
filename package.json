@@ -58,7 +58,7 @@
     "npm-run-all": "^4.0.1",
     "rimraf": "^2.5.4",
     "spectron": "^3.6.1",
-    "standard-version": "^4.0.0"
+    "standard-version": "^8.0.1"
   },
   "scripts": {
     "bump": "standard-version",
